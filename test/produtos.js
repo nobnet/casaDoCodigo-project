@@ -11,8 +11,8 @@ describe('ProdutosController',function(){
             }
         };
         http.get(configuracoes,function(res){
-            assert.equal(res.statusCode == 302);
-            assert.equal(res.headers['content-type'],'application/json;charset=utf-8');
+            assert.equal(res.statusCode, 200);
+            assert.equal(res.headers['content-type'],'application/json; charset=utf-8');
             done();
         });
     });
