@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "site de exemplo do node",
   "main": "index.js",
+  "engines":{
+  "node" : "7.9.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node app"
   },
   "author": "nt",
   "license": "ISC",
