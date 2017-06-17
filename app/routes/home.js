@@ -6,8 +6,14 @@ module.exports = function(app)  {
             if(erros){
                 return next(erros);
             }
-
-            res.render('home/index',{livros:resultados});
+            res.format({
+                html: function(){
+                res.render('home/index',{livros:resultados});
+                },
+                json: function(){
+                res.json(resultados)
+                }
+            });            
         });
         connection.end();    
     });  

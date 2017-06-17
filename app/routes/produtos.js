@@ -17,7 +17,6 @@ module.exports = function(app){
                 res.json(resultados)
             }
         });
-
     });
     connection.end();
     };
