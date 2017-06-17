@@ -1,6 +1,6 @@
 module.exports = function(app){
     
-    var listaProdutos = function(req,res){
+    var listaProdutos = function(req,res,next){
     var connection = app.infra.connectionFactory();
     var produtosDAO = new app.infra.ProdutosDAO(connection);
     produtosDAO.lista(function(erros,resultados){
