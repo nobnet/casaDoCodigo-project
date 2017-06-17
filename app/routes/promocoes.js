@@ -1,9 +1,18 @@
 module.exports = function(app) {
-    app.get("/promocoes/form",function(req,res){
+    app.get("/promocoes/form",function(req,res,next){
         var connection = app.infra.connectionFactory();
         var produtosDAO = new app.infra.ProdutosDAO(connection);
         produtosDAO.lista(function(erros,resultados){
-            res.render('promocoes/index',{lista:resultados});
+            if(erros)
+                next(erros);
+            res.format({
+                html: function(){
+                res.render('promocoes/index',{lista:resultados});
+                },
+                json: function(){
+                res.json(resultados)
+            }
+            });            
         });
         connection.end();
     });
