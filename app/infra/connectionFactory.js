@@ -1,5 +1,5 @@
 var mysql = require('mysql');
-function createDBConnection(){
+function createDBConnection(){    
     if(!process.env.NODE_ENV) {
         return mysql.createConnection({
                 host:'localhost',
@@ -10,9 +10,9 @@ function createDBConnection(){
     }
     
     if(process.env.NODE_ENV == 'production') {
-        var urlDeConexao = proces.env.CLEARDB_DATABASE_URL;
+        var urlDeConexao = process.env.CLEARDB_DATABASE_URL;
         var grupos = urlDeConexao.match(/mysql:\/\/(.*):(.*)@(.*)\/(.*)\?reconnect=true/);
-
+        
         return mysql.createConnection({
             host: grupos[3],
             user:grupos[1],
