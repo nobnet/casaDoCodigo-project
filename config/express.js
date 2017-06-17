@@ -26,7 +26,7 @@ module.exports = function() {
     });
     
     app.use(function(error, req,res,next){
-    res.status(500).render('erros/server-error');
+    res.status(500).render('erros/server-error',{error:error});
     next(error);
     });
 

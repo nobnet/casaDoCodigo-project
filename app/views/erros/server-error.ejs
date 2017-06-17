@@ -1,7 +1,13 @@
-<hml>
-    <body>
-        <p>
-            Um erro aconteceu :(. O nosso time ta correndo para corrigir
-        </p>
-    </body>
-</hml>
+<% include header %>
+<header>
+  <h1>Casa do Código</h1>
+  <h4>Aconteceu algo terrível! :(</h4>
+</header>
+<p>
+  Veja os detalhes do erro:
+  <br>
+  <%- error.message %>
+</p>
+<hr>
+<p>Que tal voltar <a href="/">home page?</a> :)</p>
+<% include footer %>
